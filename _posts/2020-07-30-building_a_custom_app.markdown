@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Building a custom App "
-date:       2020-07-30 17:31:36 +0000
+date:       2020-07-30 13:31:37 -0400
 permalink:  building_a_custom_app
 ---
 
@@ -51,7 +51,7 @@ end
 
 The database and model are set up. I now can implement CRUD.
 
-###CREATE
+### CREATE
 
 The first thing I need to do to create a plant is to create a HTTP get request that renders a new.erb view.
 
@@ -91,7 +91,7 @@ plant = current_user.plants.build(name: params[:name],water: params[:water], lig
    end
 end
 
-###READ
+### READ
 
 Now that a plant is created I can now implement the two reader requests. First I would index all the plants. This request stores all instances of plants inside the instance variable @plants and renders the index view.
 
@@ -135,8 +135,8 @@ The show view would then output the following information about each plant.
 <p>Price: <%= @plant.price%></p>
 <p>Notes: <%= @plant.notes%></p>
 
-###UPDATE
-
+### UPDATE
+ 
 To edit a specific plant, I would send a get request to ‘/plants/:id/edit’ which will use dynamic route to get user input and find the plant.
 
 get '/plants/:id/edit' do
@@ -173,7 +173,8 @@ patch '/plants/:id' do
   end
 end
 
-DELETE
+###DELETE
+
 To delete a specific plant I added in a delete button in show.erb. This from will send a request to ‘delete “/plants<%=plant.id%>”’.
 
 <form method="POST" action="/plants/<%= @plant.id %>">
