@@ -1,0 +1,39 @@
+---
+layout: post
+title:      "Here We Go! "
+date:       2020-07-30 17:32:43 +0000
+permalink:  here_we_go
+---
+
+
+I’m three weeks into my program and what a journey it has been. We’re are at the end of Module 1 which means it’s project week! We have been asked to create a CLI Project that can take in at least two scrape methods.
+
+I live in San Diego, California. One of my favorite things to do is walk alongside the shore of the some of the most beautiful beaches. Because I’m a curious person and I want to learn more about these beaches, I thought it would be interesting to scrape a beach website for my project.
+
+This is a simple scraper, which will give you a list of the beaches in San Diego like Mission Beach, La Jolla Beach, Coronado beach and other 16 beaches as well as what to love and what to know about each beach.
+
+Below are some tips and my thinking process I used to build my project.
+
+CLI File Structure
+
+The first challenge was to set up the file structure. I started off by watching Avi’s “Daily Deals” project walkthrough where he explained the process in detail as well as how to approach the project. I ran bundle gem sd-beaches which created the file structure for me. Super Simple! I had everything hooked up to Github. Even though I wasn’t creating a Gem I would use the files I needed and get ride of ones that I didn’t need.
+
+Executable File
+
+I added an executable file in my bin’s directory. The executable file, named run, would only need a Shebang line. It tells the program loader what command to use to execute the file.
+
+Environment File
+
+I set up my environment file accordingly.
+
+ Write CLI
+ 
+After setting up all my files I was ready to scape some data and write my CLI. I had two different websites to chose from. I ended up scraping a website that was a bit difficult. With the help of my cohort lead I was able to manage. I scraped the information by digging the css elements. Below is an example of what my first class scrape looks like.
+
+The thinking process helped me build the scraper method below.
+
+My project was complete! The only thing was it wasn’t displaying the information like I had hoped it would. The most challenging thing I faced with this project was removing quotes and square brackets from the What to know and What to love portion. After scraping the information I realized I was getting a few parentheses and brackets per section. I had initially thought about using .gsub but then I realized I had to make a string. I ended up using .join. I created a new method within my Cli.rb that joined all of the sentences and displayed the paragraph exactly how I wanted it to.
+
+With a few clicks I’m able to display the 19 beaches in San Diego. In the end it was very satisfying to see my CLI project work. Mission accomplished!
+
+
